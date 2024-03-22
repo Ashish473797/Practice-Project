@@ -9,7 +9,7 @@ let anyWinner = false;
 
 // Logic Array for Win Check
 let status = [
-    [1, 2, 3],
+    [2, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
 ]
@@ -114,6 +114,20 @@ function smartMove(){
         else if(status[2][0] != 0 && status[2][0] != 1){
             return 7;
         }
+    }
+
+    // Strategy first corner
+    if(status[0][0] != 0 && status[0][0] != 1){
+        return 1;
+    }
+    else if(status[0][2] != 0 && status[0][2] != 1){
+        return 3;
+    }
+    else if(status[2][0] != 0 && status[2][0] != 1){
+        return 7;
+    }
+    else if(status[2][2] != 0 && status[2][2] != 1){
+        return 9;
     }
 
     for(let i = 0; i < 3; i++){
